@@ -116,16 +116,18 @@
                                     <li><a href="">Bimbingan Tugas Akhir</a></li>
                                     <hr>
                                     <li><a href="">Pengaduan</a></li>
+                                    <li><a href="{{ route('layanan-publik.kontak') }}">Hubungi Kami</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Berita</a>
+                            <li><a href="{{ route('layanan-publik.kontak') }}">Hubungi Kami</a></li>
+                            <!-- <li><a href="#">Berita</a>
                                 <ul class="child">
                                     <li><a href="">Artikel</a></li>
                                     <li><a href="">Liputan Khusus</a></li>
                                     <li><a href="">Webinar</a></li>
                                     <li><a href="">Forum Group Discussion</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <!--DL Menu Start-->
@@ -201,6 +203,7 @@
                                                     Negeri</a></li>
                                         </ul>
                                     </li>
+                                    <li><a href="{{ route('layanan-publik.kontak') }}">Hubungi Kami</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item kode-parent-menu"><a href="#">Berita</a>

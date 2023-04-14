@@ -8,6 +8,7 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Itstructure\LaRbac\Interfaces\RbacUserInterface;
 use Itstructure\LaRbac\Traits\Administrable;
 use Laravel\Sanctum\HasApiTokens;
@@ -64,7 +65,10 @@ class User extends Authenticatable implements RbacUserInterface
      */
     public function setPasswordAttribute(string $password): void
     {
-        $this->attributes['password'] = bcrypt($password);
+        if(Hash::needsRehash($password) ) {
+            $password = Hash::make($password);
+        }
+        $this->attributes['password'] = $password;
     }
 
     /**
@@ -94,5 +98,10 @@ class User extends Authenticatable implements RbacUserInterface
         return $this->attributes['avatar'] == null || '' ?
             $defaultAvatarPlaceholder :
             config('sipeg.photo_url') . $this->attributes['avatar'];
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'user_role', 'user_id', 'role_id');
     }
 }
