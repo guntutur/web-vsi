@@ -32,9 +32,19 @@ RUN apk update && apk add --no-cache build-base wget \
     libzip-dev
 
 # Add and Enable PHP-PDO Extenstions
-RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql sockets gd zip
-
-RUN pecl channel-update pecl.php.net \
+RUN curl -fsSL https://github.com/jedisct1/libsodium/archive/1.0.18-RELEASE.tar.gz -o libsodium.tar.gz \
+    && mkdir -p libsodium \
+    && tar -xf libsodium.tar.gz -C libsodium --strip-components=1 \
+    && ( \
+        cd libsodium \
+        && ./autogen.sh \
+        && ./configure --disable-dependency-tracking \
+        && make \
+        && make install \
+    ) \
+    && rm -rf libsodium \
+    && docker-php-ext-install sodium pdo pdo_mysql pdo_pgsql sockets gd zip \
+    && pecl channel-update pecl.php.net \
     && pecl install memcached \
     && pecl install imagick \
     && pecl install redis \
