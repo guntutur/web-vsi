@@ -14,13 +14,13 @@
                         <div class='console-underscore' id='console'>&#95;</div>
                     </div>
                     <div class="banner_btn">
-                        <a class="theam_btn animated" href="#">Daftar Layanan</a>
                         <a class="theam_btn animated" href="#">MAGMA Indonesia</a>
+                        <a class="theam_btn animated" href="#">Portal MGB</a>
                     </div>
                     <div class="banner_search_form">
-                        <label>Search Here</label>
+                        <label>Cari Artikel</label>
                         <div class="banner_search_field animated">
-                            <input type="text" placeholder="What  do you want to do">
+                            <input type="text" placeholder="">
                             <a href="#"><i class="fa fa-search"></i></a>
                         </div>
                     </div>

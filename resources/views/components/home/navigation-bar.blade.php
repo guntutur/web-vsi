@@ -81,8 +81,8 @@
                             </li>
                             <li><a href="#">Layanan Publik</a>
                                 <ul class="child">
-                                    <li><a href="{{ route('layanan-publik.reformasi-birokrasi') }}">Reformasi
-                                            Birokrasi</a></li>
+<!--                                    <li><a href="{{ route('layanan-publik.reformasi-birokrasi') }}">Reformasi
+                                            Birokrasi</a></li>-->
                                     <li><a href="#">Diseminasi Informasi</a>
                                         <ul class="child">
                                             <li><a href="{{ route('layanan-publik.diseminasi-informasi.gunung-api') }}">Gunung
@@ -109,14 +109,15 @@
                                                     Negeri</a></li>
                                         </ul>
                                     </li>
+                                    <li><a href="">Bimbingan</a></li>
                                     <hr>
                                     <li><a href="">Permohonan Data</a></li>
                                     <li><a href="">Permohonan API Service MAGMA</a></li>
-                                    <li><a href="">Praktik Kerja Lapangan</a></li>
-                                    <li><a href="">Bimbingan Tugas Akhir</a></li>
+<!--                                    <li><a href="">Praktik Kerja Lapangan</a></li>
+                                    <li><a href="">Bimbingan Tugas Akhir</a></li>-->
                                     <hr>
                                     <li><a href="">Pengaduan</a></li>
-                                    <li><a href="{{ route('layanan-publik.kontak') }}">Hubungi Kami</a></li>
+<!--                                    <li><a href="{{ route('layanan-publik.kontak') }}">Hubungi Kami</a></li>-->
                                 </ul>
                             </li>
                             <li><a href="{{ route('layanan-publik.kontak') }}">Hubungi Kami</a></li>
