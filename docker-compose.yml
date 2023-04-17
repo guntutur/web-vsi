@@ -12,10 +12,10 @@ services:
         environment:
             SERVICE_NAME: web-vsi
             SERVICE_TAGS: dev
-            DB_HOST: mariadb
+            DB_HOST: 172.16.2.121
             DB_DATABASE: pvmbg
-            DB_USERNAME: pvmbg
-            DB_PASSWORD: pvmbg
+            DB_USERNAME: wovodatuser
+            DB_PASSWORD: wovodatpassword
             DB_CONNECTION_PMBGI: pgsql
             DB_HOST_PMBGI: 172.16.2.121
             DB_PORT_PMBGI: 5432
@@ -56,22 +56,22 @@ services:
             - "6379:6379"
         networks:
             - intranet
-    
-    mariadb:
-        image: mariadb:latest
-        container_name: mariadb
-        restart: unless-stopped
-        environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: pvmbg
-            MYSQL_USER: pvmbg
-            MYSQL_PASSWORD: pvmbg
-        ports:
-            - "3306:3306"
-        volumes:
-            - mariadb_data:/var/lib/mysql
-        networks:
-            - intranet
+
+#    mariadb:
+#        image: mariadb:latest
+#        container_name: mariadb
+#        restart: unless-stopped
+#        environment:
+#            MYSQL_ROOT_PASSWORD: root
+#            MYSQL_DATABASE: pvmbg
+#            MYSQL_USER: pvmbg
+#            MYSQL_PASSWORD: pvmbg
+#        ports:
+#            - "3306:3306"
+#        volumes:
+#            - mariadb_data:/var/lib/mysql
+#        networks:
+#            - intranet
 networks:
     intranet:
         driver: bridge
