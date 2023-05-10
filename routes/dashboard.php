@@ -362,4 +362,14 @@ Route::group(['middleware' => ['auth']], function () {
             });
         });
     });
+
+    // Layanan Publik
+    Route::group(['prefix' => 'layanan-publik'], function () {
+        Route::controller(ApiPublicServiceController::class)->group(function () {
+            Route::get('/', 'index');
+            Route::post('/', 'store');
+            Route::put('/', 'update');
+            Route::delete('/', 'destroy');
+        });
+    });
 });
