@@ -89,13 +89,13 @@
 </div>
 
 @if (isset($news) && count($news) > 0)
-<div class="city_jobs_wrap" style="background-image: url('{{ $news[0]->thumbnail }}'); 
+<div class="city_jobs_wrap" style="background-image: url('{{ $news[0]->thumbnail }}');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
     ">
     @else
-    <div class="city_jobs_wrap" style="background-image: url('https://magma.vsi.esdm.go.id/img/crs/VEN_LEW20220214142737.png'); 
+    <div class="city_jobs_wrap" style="background-image: url('https://magma.vsi.esdm.go.id/img/crs/VEN_LEW20220214142737.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -132,13 +132,13 @@
                 </li>
                 <li>
                     @if ($tanggapanKejadian)
-                    <div class="city_jobs_item pull-right overlay" style="background-image: url('{{ $tanggapanKejadian->thumbnail }}'); 
+                    <div class="city_jobs_item pull-right overlay" style="background-image: url('{{ $tanggapanKejadian->thumbnail }}');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
     ">
                         @else
-                        <div class="city_jobs_item pull-right overlay" style="background-image: url('/images/gertan.jpeg'); 
+                        <div class="city_jobs_item pull-right overlay" style="background-image: url('/images/gertan.jpeg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
