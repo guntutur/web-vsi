@@ -15,6 +15,7 @@ class NewsCategorySeeder extends Seeder
      */
     public function run()
     {
+        DB::table("news_categories")->truncate();
         DB::table("news_categories")->insert([
             [
                 "id" => 1,
