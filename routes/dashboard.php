@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Http\Controllers\Administration\AdministrationController;
@@ -363,13 +364,75 @@ Route::group(['middleware' => ['auth']], function () {
         });
     });
 
-    // Layanan Publik
-    Route::group(['prefix' => 'layanan-publik'], function () {
-        Route::controller(ApiPublicServiceController::class)->group(function () {
-            Route::get('/', 'index');
-            Route::post('/', 'store');
-            Route::put('/', 'update');
-            Route::delete('/', 'destroy');
+    // Role
+    Route::prefix('role')->name('role.')->controller(RoleController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::get('/{id}/edit', 'edit')->name('edit');
+        Route::get('/{id}/policy', 'policy')->name('policy');
+    });
+
+    // Api
+    Route::group(['prefix' => 'api'], function () {
+        // Gerakan Tanah
+        Route::group(['prefix' => 'gerakan-tanah'], function () {
+            Route::controller(ApiGroundMovementController::class)->group(function () {
+                Route::get('/', 'index');
+                Route::post('/', 'store');
+                Route::put('/', 'update');
+                Route::delete('/', 'destroy');
+            });
+        });
+
+        // Profile
+        Route::group(['prefix' => 'profile'], function () {
+            Route::controller(ApiProfileController::class)->group(function () {
+                Route::post('/', 'store');
+                Route::put('/', 'update');
+            });
+        });
+
+        // Pegawai
+        Route::group(['prefix' => 'pegawai'], function () {
+            Route::controller(ApiUserController::class)->group(function () {
+                Route::get('/', 'index');
+                Route::post('/', 'store');
+                Route::put('/', 'update');
+                Route::delete('/', 'destroy');
+            });
+        });
+
+        // Upload Center
+        Route::group(['prefix' => 'upload-center'], function () {
+            Route::controller(ApiFileController::class)->group(function () {
+                Route::get('/', 'index');
+                Route::post('/', 'store');
+                Route::delete('/', 'destroy');
+                Route::get('/label', 'indexLabel');
+                Route::get('/tags', 'indexTags');
+                Route::post('/tags', 'storeTag');
+            });
+        });
+
+        // Layanan Publik
+        Route::group(['prefix' => 'layanan-publik'], function () {
+            Route::controller(ApiPublicServiceController::class)->group(function () {
+                Route::get('/', 'index');
+                Route::post('/', 'store');
+                Route::put('/', 'update');
+                Route::delete('/', 'destroy');
+            });
+        });
+
+        // Role
+        Route::group(['prefix' => 'role'], function () {
+            Route::controller(ApiRoleController::class)->group(function () {
+                Route::get('/', 'index');
+                Route::post('/', 'store');
+                Route::put('/', 'update');
+                Route::delete('/', 'destroy');
+                Route::put('/policy', 'updatePolicy');
+            });
         });
     });
 });

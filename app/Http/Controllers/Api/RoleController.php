@@ -66,7 +66,6 @@ class RoleController extends Controller
                     'description.required' => 'Deskripsi harus diisi',
                 ]
             );
-
             if ($validator->fails()) {
                 return response()->json([
                     'message' => $validator->errors()->first(),
@@ -88,7 +87,6 @@ class RoleController extends Controller
             ], 200);
         } catch (Throwable $e) {
             DB::rollBack();
-
             return response()->json([
                 'message' => $e->getMessage(),
                 'serve' => [],
@@ -148,7 +146,6 @@ class RoleController extends Controller
                     'serve' => []
                 ], 400);
             }
-
             $role->name = $request->name;
             $role->slug = $request->slug;
             $role->description = $request->description;
@@ -162,7 +159,6 @@ class RoleController extends Controller
             ], 200);
         } catch (Throwable $e) {
             DB::rollBack();
-
             return response()->json([
                 'message' => $e->getMessage(),
                 'serve' => [],
@@ -197,7 +193,6 @@ class RoleController extends Controller
             ], 200);
         } catch (Throwable $e) {
             DB::rollBack();
-
             return response()->json([
                 'message' => $e->getMessage(),
                 'serve' => [],
@@ -224,7 +219,6 @@ class RoleController extends Controller
                     'serve' => []
                 ], 400);
             }
-
             $role->policies = json_encode($policies);
             $role->save();
 
@@ -236,7 +230,6 @@ class RoleController extends Controller
             ], 200);
         } catch (Throwable $e) {
             DB::rollBack();
-
             return response()->json([
                 'message' => $e->getMessage(),
                 'serve' => [],
