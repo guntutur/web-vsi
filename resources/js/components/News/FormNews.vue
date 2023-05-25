@@ -32,7 +32,6 @@
                     ]"
                 />
             </a-form-item>
-<<<<<<< HEAD
             <div v-if="category == '1'">
                 <a-button-group>
                     <a-button
@@ -82,35 +81,15 @@
                 <div v-show="tabKey == '1'">
                     <a-form-item label="Konten">
                         <tiny-mce
-=======
-            <a-collapse
-                style="margin-bottom: 10px"
-                v-if="category == '1'"
-                :activeKey="tabKey"
-                @change="callback"
-                :bordered="false"
-            >
-                <a-collapse-panel key="1" header="Intro">
-                    <a-form-item label="Konten">
-                        <tiny-mce
-                            :key="'intro'"
->>>>>>> 15a860b (feat [landing,cms] add pagination data dasar, pilih media press release)
                             @change="handleChangeTiny($event, 'intro')"
                             :value.sync="intro"
                             :apiurl="apiurl"
                             :type="'intro'"
-<<<<<<< HEAD
                             :key="'intro'"
                         ></tiny-mce>
                     </a-form-item>
                 </div>
                 <div v-show="tabKey == '2'">
-=======
-                        ></tiny-mce>
-                    </a-form-item>
-                </a-collapse-panel>
-                <a-collapse-panel key="2" header="Sejarah Letusan">
->>>>>>> 15a860b (feat [landing,cms] add pagination data dasar, pilih media press release)
                     <a-form-item label="Konten">
                         <tiny-mce
                             @change="handleChangeTiny($event, 'history')"
@@ -120,13 +99,8 @@
                             :key="'history'"
                         ></tiny-mce>
                     </a-form-item>
-<<<<<<< HEAD
                 </div>
                 <div v-show="tabKey == '3'">
-=======
-                </a-collapse-panel>
-                <a-collapse-panel key="3" header="Geologi">
->>>>>>> 15a860b (feat [landing,cms] add pagination data dasar, pilih media press release)
                     <a-form-item label="Konten">
                         <tiny-mce
                             @change="handleChangeTiny($event, 'geology')"
@@ -136,13 +110,8 @@
                             :key="'geology'"
                         ></tiny-mce>
                     </a-form-item>
-<<<<<<< HEAD
                 </div>
                 <div v-show="tabKey == '4'">
-=======
-                </a-collapse-panel>
-                <a-collapse-panel key="4" header="Geofisika">
->>>>>>> 15a860b (feat [landing,cms] add pagination data dasar, pilih media press release)
                     <a-form-item label="Konten">
                         <tiny-mce
                             @change="handleChangeTiny($event, 'geophysic')"
@@ -152,13 +121,8 @@
                             :key="'geophysic'"
                         ></tiny-mce>
                     </a-form-item>
-<<<<<<< HEAD
                 </div>
                 <div v-show="tabKey == '5'">
-=======
-                </a-collapse-panel>
-                <a-collapse-panel key="5" header="Geokimia">
->>>>>>> 15a860b (feat [landing,cms] add pagination data dasar, pilih media press release)
                     <a-form-item label="Konten">
                         <tiny-mce
                             @change="handleChangeTiny($event, 'geochemistry')"
@@ -168,13 +132,8 @@
                             :key="'geochemistry'"
                         ></tiny-mce>
                     </a-form-item>
-<<<<<<< HEAD
                 </div>
                 <div v-show="tabKey == '6'">
-=======
-                </a-collapse-panel>
-                <a-collapse-panel key="6" header="Kawasan Rawan Bencana">
->>>>>>> 15a860b (feat [landing,cms] add pagination data dasar, pilih media press release)
                     <a-form-item label="Konten">
                         <tiny-mce
                             @change="handleChangeTiny($event, 'disaster_area')"
@@ -184,13 +143,8 @@
                             :key="'disaster_area'"
                         ></tiny-mce>
                     </a-form-item>
-<<<<<<< HEAD
                 </div>
                 <div v-show="tabKey == '7'">
-=======
-                </a-collapse-panel>
-                <a-collapse-panel key="7" header="Daftar Pustaka">
->>>>>>> 15a860b (feat [landing,cms] add pagination data dasar, pilih media press release)
                     <a-form-item label="Konten">
                         <tiny-mce
                             @change="handleChangeTiny($event, 'reference')"
