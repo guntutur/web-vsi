@@ -87,6 +87,7 @@ class RoleController extends Controller
             ], 200);
         } catch (Throwable $e) {
             DB::rollBack();
+
             return response()->json([
                 'message' => $e->getMessage(),
                 'serve' => [],
@@ -159,6 +160,7 @@ class RoleController extends Controller
             ], 200);
         } catch (Throwable $e) {
             DB::rollBack();
+
             return response()->json([
                 'message' => $e->getMessage(),
                 'serve' => [],
@@ -193,6 +195,7 @@ class RoleController extends Controller
             ], 200);
         } catch (Throwable $e) {
             DB::rollBack();
+
             return response()->json([
                 'message' => $e->getMessage(),
                 'serve' => [],
@@ -230,6 +233,7 @@ class RoleController extends Controller
             ], 200);
         } catch (Throwable $e) {
             DB::rollBack();
+
             return response()->json([
                 'message' => $e->getMessage(),
                 'serve' => [],
