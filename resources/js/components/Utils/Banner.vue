@@ -11,13 +11,13 @@
                         <div class="banner_btn">
                             <a
                                 class="theam_btn animated"
-                                href="https://magma.esdm.go.id"
+                                :href="this.magma"
                                 target="_blank"
                                 >MAGMA Indonesia</a
                             >
                             <a
                                 class="theam_btn animated"
-                                href="https://vsi.esdm.go.id/portalmbg"
+                                :href="this.pmbgi"
                                 target="_blank"
                                 >Portal MBG</a
                             >
@@ -62,7 +62,7 @@
 </template>
 <script>
 export default {
-    props: ["pengumuman", "urlpencarian"],
+    props: ["pengumuman", "urlpencarian", "pmbgi", "magma"],
     data() {
         return {
             keyword: ""

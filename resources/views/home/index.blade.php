@@ -2,7 +2,12 @@
 
 @section('content')
 <!--CITY MAIN BANNER START-->
-<banner pengumuman="{{ $pengumuman }}" urlpencarian="{{route('hasil-pencarian.index')}}"></banner>
+<banner
+    pengumuman="{{ $pengumuman }}"
+    urlpencarian="{{route('hasil-pencarian.index')}}"
+    magma="{{ config('app.magma') }}"
+    pmbgi="{{ config('app.pmbgi') }}"
+></banner>
 <!--CITY MAIN BANNER END-->
 
 <div class="city_banner_services">
@@ -12,13 +17,13 @@
                 <li>
                     <div class="city_service_text">
                         <span><i class="fa fa-map"></i></span>
-                        <h5><a href="https://magma.vsi.esdm.go.id">MAGMA Indonesia</a></h5>
+                        <h5><a href="{{ config('app.magma') }}">MAGMA Indonesia</a></h5>
                     </div>
                 </li>
                 <li>
                     <div class="city_service_text">
                         <span><i class="fa fa-download"></i></span>
-                        <h5><a href="https://vsi.esdm.go.id/portalmbg">Download Peta KRB</a></h5>
+                        <h5><a href="{{ config('app.pmbgi') }}">Download Peta KRB</a></h5>
                     </div>
                 </li>
                 <li>
