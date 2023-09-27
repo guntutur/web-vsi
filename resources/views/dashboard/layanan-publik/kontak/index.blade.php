@@ -1,7 +1,5 @@
 @extends('dashboard.template.layout')
-
 @section('title', 'Kontak')
-
 @section('body-content')
     <div class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30">
         <div>
@@ -22,7 +20,6 @@
         </table-contact>
     </div>
 @endsection
-
 @push('scripts')
     <script>
         function changeMode(url) {

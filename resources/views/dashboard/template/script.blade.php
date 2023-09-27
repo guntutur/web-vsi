@@ -2,15 +2,15 @@
 <script src="{{ asset('dashforge/lib/feather-icons/feather.min.js') }}"></script>
 <script src="{{ asset('dashforge/lib/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
-@if (config('app.debug'))
+@if (config('app.debug')) // we will use this block later
+@endif
+@if (request()->is('dashboard'))
     <script src="{{ asset('dashforge/lib/jquery.flot/jquery.flot.js') }}"></script>
     <script src="{{ asset('dashforge/lib/jquery.flot/jquery.flot.stack.js') }}"></script>
     <script src="{{ asset('dashforge/lib/jquery.flot/jquery.flot.resize.js') }}"></script>
     <script src="{{ asset('dashforge/lib/chart.js/Chart.bundle.min.js') }}"></script>
-    @if (request()->is('dashboard'))
-        <script src="{{ asset('dashforge/assets/js/dashforge.sampledata.js') }}"></script>
-        <script src="{{ asset('dashforge/assets/js/dashboard-one.js') }}"></script>
-    @endif
+    <script src="{{ asset('dashforge/assets/js/dashforge.sampledata.js') }}"></script>
+    <script src="{{ asset('dashforge/assets/js/dashboard-one.js') }}"></script>
 @endif
 @yield('add-vendor-script')
 <script src="{{ asset('dashforge/assets/js/dashforge.js') }}"></script>

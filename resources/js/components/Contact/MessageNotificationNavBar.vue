@@ -16,7 +16,6 @@
                     </div>
                 </div>
             </a>
-
             <div v-if="notifications.length === 0">
                 <div class="media">
                     <div class="media-body mg-l-15">
