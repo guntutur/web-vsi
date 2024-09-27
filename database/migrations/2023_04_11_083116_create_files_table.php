@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->index()->constrained('a_users');
             $table->string('name');
             $table->string('path');
+            $table->boolean('is_tmp')->default(0);
             $table->timestamps();
         });
     }

@@ -1,12 +1,8 @@
-@extends('template.layanan-publik.layout')
+@extends('template.layout')
 
 @section('title', 'Hubungi Kami')
 
-@push('styles')
-<link href="{{ asset('css/selectric.css') }}" rel="stylesheet">
-@endpush
-
-@section('body')
+@section('content')
 <!-- SAB BANNER START-->
 <div class="sab_banner overlay">
     <div class="container">
@@ -31,43 +27,29 @@
                     <span>Hubungi Kami</span>
                     <h2>Lebih dekat dengan Kami</h2>
                 </div>
-                <div class="event_booking_form">
-                    <form method="POST" action="{{ route('layanan-publik.kontak.save') }}">
-                        <div style="margin-top: 10px;display: flex;justify-content: center;">
-                            @if(session('success') || session('error'))
-                            @if (session('success'))
-                            <div class="alert alert-success" role="alert">{{ session('success') }}</div>
-                            @else
-                            <div class="alert alert-danger" role="alert">{{ session('error') }}</div>
-                            @endif
-                            @endif
+                <div class="event_booking_form" id="app">
+                    <div class="mapouter" style="padding-bottom: 10px;height: 500px;">
+                        <div class="gmap_canvas"><iframe width="100%" height="500px" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q=Pusat Vulkanologi dan Mitigasi Bencana Geologi&t=&z=15&ie=UTF8&iwloc=&output=embed&language=ID"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                         </div>
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="event_booking_field">
-                                    <input type="text" placeholder="Nama" name="name">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="event_booking_field">
-                                    <input type="email" placeholder="Email" name="email">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="event_booking_field">
-                                    <input type="text" placeholder="Subject" name="subject">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="event_booking_area">
-                                    <textarea name="message" placeholder="Ketik pesan disini"></textarea>
-                                </div>
-                                <input type="hidden" name="token" id="recaptcha">
-                                <button class="theam_btn btn2" type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <b>Pusat Vulkanologi dan Mitigasi Bencana Geologi - Badan Geologi - Kementrian Energi dan Sumber Daya Mineral</b> <br />
+
+                        Jl.Diponegoro No. 57
+
+                        Bandung - Jawa Barat
+
+                        40122 Indonesia <br/>
+                        <hr/>
+                       Email: <a href="mailto:pvmbg@esdm.go.id">pvmbg@esdm.go.id</a> <br/>
+                       Telepon 1: <a href="tel:+62227271402">+62227271402</a><br/>
+                       Telepon 2: <a href="tel:+62227272606">+62227272606</a><br/>
+                       Fax: <a href="tel:+62227202761">+62227202761</a><br/>
+                    </div>
+                    <!-- <contact-form csrf="{{ csrf_token() }}" apiurl="{{ env('APP_URL') }}"
+                        geetestid="{{ env('GEETEST_EVENT_ID') }}"></contact-form> -->
                 </div>
             </div>
         </div>
@@ -75,32 +57,3 @@
 </div>
 <!-- FORM END -->
 @endsection
-
-@push('scripts')
-<script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITEKEY') }}"></script>
-<script>
-    grecaptcha.ready(function () {
-        grecaptcha.execute('{{ env("RECAPTCHA_SITEKEY") }}', {
-            action: 'register'
-        }).then(function (token) {
-            if (token) {
-                document.getElementById('recaptcha').value = token;
-            }
-        });
-    });
-
-</script>
-<script src="{{ asset('js/jquery-filterable.js') }}"></script>
-<script src="{{ asset('js/jquery.nice-select.min.js') }}"></script>
-<script src="{{ asset('js/web/collab/index.js') }}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        var collabHandle = CollabHandler.construct({
-            maxPicField: 2,
-            maxInvolvedField: 5
-        });
-        collabHandle.init();
-    });
-
-</script>
-@endpush
